@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    background-color: #080808;
+    color: white;
+}
+/* ====================================Home page Styling========================================= */
+.background{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+}
+nav{
+    display: flex;
+    justify-content: space-between;   
+    align-items: center;
+    padding: 1em 5em;
+}
+.logo{
+    display: inline-block;
+    font-weight: 600;
+    font-size: 2rem;
+}
+.logo span{
+    color: orange;
+}
+nav img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+nav ul{
+    display: flex;
+    gap: 3vw;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0px;
+    width: 0%;
+    height: 3px;
+    background: orange;
+    transition: .5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.containerText{
+    display: inline-block;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+.containerText .title{
+    font-size: 2.5rem;
+}
+.containerText .greeting{
+    font-size: 4rem;
+    font-weight: 700;
+}
+.greeting span{
+    color: orange;
+}
+
+/* ========================== About styling ====================================== */
+
+#aboutPage{
+    padding: 5rem 0;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.215);
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+}
+.aboutCol-1{
+    flex-basis: 35%;
+}
+.aboutCol-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+.aboutCol-2{
+    flex-basis: 60%;
+}
+.aboutCol-2 .subTitle{
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.tabTitles{
+    display: flex;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    gap:3rem;
+}
+.tabTitles .tabLinks{
+    cursor: pointer;
+    position: relative;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.tabTitles .tabLinks::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    background-color: orange;
+    transition: .5s;
+    left: 0px;
+    bottom: -8px;
+}
+.tabLinks.activeLink::after{
+    content: '';
+    width: 50%;
+}
+.tabContents ul li span{
+    font-size: .80rem;
+    color: orange;
+}
+.tabContents{
+    display: none;
+}
+.tabContents.activeTab{
+    display: block;
+}
+
+/* ===================== Servises page styling ============================== */
+
+#servises{
+    padding: 30px 1rem;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.215);
+}
+.servisesList{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.servisesList div{
+    background-color: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background-color .5s, transform 0.5s;
+}
+.servisesList div i{
+    margin-bottom: 30px;
+    font-size: 50px;
+}
+.servisesList div h2{
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+.servisesList div a{
+    font-size: 15px;
+    margin-top: 20px;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+}
+.servisesList div:hover{
+    background-color: rgb(255, 179, 38);
+    transform: translateY(-10px);
+}
+
+/* =========================== Portfolio styling ================================ */
+#portfolio{
+    padding: 30px 1rem;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.215);
+}
+.workList{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 10px;
+    transition: transform .5s;
+}
+.layer{
+    height: 0;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.605),orange);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    transition: .5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer p{
+    font-size: 14px;       
+}
+.layer a{
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    line-height: 4rem;
+    background-color: white;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    text-align: center;
+    color: orange;      
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    padding: .9rem 3rem;
+    width: fit-content;
+    border: 1px solid orange;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    transition: .3s;
+}
+.btn:hover{
+    background-color: orange;
+}
+
+/* ==================================== Contact page styling ========================================== */
+#contact{
+    height: 80vh;
+    width: 100%;
+    padding: 3rem 0;
+}
+.leftContact{
+    flex-basis: 35%;
+}
+.leftContact p{
+    margin-top: 2rem;
+}
+.leftContact p i{
+    color: orange;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+.socialIcons{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.socialIcons a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    color: #262626;
+    transition: .2s;
+}
+.socialIcons a:hover{
+    transform: scale(1.3) translateY(-7px);
+}
+.socialIcons .leetcode{
+    margin-bottom: .3rem;
+}
+.btn.btn2{
+    display: inline-block;
+}
+.bxs-download{
+    margin-right: .5rem;
+    font-size: 1rem;
+}
+.rightContact{
+    flex-basis: 60%;
+}
+.rightContact form{
+    width: 100%;
+}
+.rightContact form textarea{
+    height: 20vh;
+}
+.rightContact form textarea, .rightContact form input{
+    width: 100%;
+    border: 0;
+    outline: none;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #262626;
+    resize: none;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: .4rem;
+}
+form .btn2{
+    padding: .9rem 4rem;
+    font-size: 1.1rem;
+    margin-top: 1.3rem;
+    cursor: pointer;
+}
+
+footer{
+    width: 100%;
+    font-weight: 300;
+    margin-top: 1.2rem;
+    text-align: center;
+    background-color: #262626;
+    padding: 1.2rem 0;
+}
+footer span{
+    color: orange;
+    font-weight: 400;
+}
+
+
+/* ==================================== Media queries =============================== */
+
