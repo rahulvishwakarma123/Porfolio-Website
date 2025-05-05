@@ -4,34 +4,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.0.0-rc.1/dist/css/coreui.min.css" rel="stylesheet" integrity="sha384-6YUohc5ifdoNCo0LbNiTPUr/PgSpk8g4xTkq3gTstOpNuzSI4CPX8jNul1r9kpFV" crossorigin="anonymous">
-  <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui-pro@5.0.0-rc.1/dist/css/coreui.min.css" rel="stylesheet" integrity="sha384-styrHw5ARomA8xPUVXJSXXchmA9xX4sqIeUqZtGkcT2zBp/DidIW1GYUNVO5FbmJ" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <title>Document</title>
 </head>
 
 <body>
 
   <!-- ------------------------------------Home page --------------------------------------- -->
-
-  <div class="background">
-    <nav>
-      <div class="logoContainer">
-        <img src="./images/WebDev Rahul (1).png" alt="">
-        <h1 class="logo">WebDev <span>R</span>ahul</h1>
+  <div id="header">
+    <div class="container navPadding">
+      <nav>
+        <div class="logoContainer">
+          <img src="./images/WebDev Rahul (1).png" alt="">
+          <!-- <h1 class="logo">WebDev <span>R</span>ahul</h1> -->
+        </div>
+        <ul id="sideMenu">
+          <li><a href="#header">Home</a></li>
+          <li><a href="#aboutPage">About</a></li>
+          <li><a href="#servises">Servises</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <i class='bx bx-right-arrow-alt menu' onclick="closeMenu()"></i>
+        </ul>
+        <i class='bx bx-menu menu' onclick="openMenu()"></i>
+      </nav>
+      <div class="headerText">
+        <h1 class="title">MERN Stack Developer</h1>
+        <p class="greeting">Hii, I'm <span>Rahul</span> Vishwakarma <br> from Gorakhpur UP.</p>
       </div>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Servises</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="containerText">
-      <p class="title">MERN Stack Developer</p>
-      <p class="greeting">Hii, I'm <span>Rahul</span> Vishwakarma <br> from Gorakhpur UP.</p>
     </div>
   </div>
 
@@ -45,7 +46,8 @@
         </div>
         <div class="aboutCol-2">
           <h1 class="subTitle">About me</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem explicabo expedita aliquam obcaecati illum voluptas unde sed dolores dolor, incidunt quod debitis ipsum dolorem perferendis error praesentium veritatis quos inventore!</p>
+          <p class="aboutPara">Hi, I'm a passionate Computer Science student with a strong foundation in Data Structures and Algorithms using Java and growing expertise in full-stack web development with the MERN stack (MongoDB, Express.js, React.js, and Node.js). I enjoy building clean, user-focused digital experiences and solving complex problems with efficient, scalable code.</p>
+
           <div class="tabTitles">
             <p class="tabLinks activeLink" onclick="openTab('skills')">Skills</p>
             <p class="tabLinks" onclick="openTab('education')">Education</p>
@@ -112,33 +114,36 @@
 
   <!-- ------------------------------ Portfolio page ------------------------------------------ -->
   <div id="portfolio">
-    <h1 class="subTitle">Portfolio</h1>
-    <div class="workList">
-      <div class="work">
-        <img src="./images/webDevelopment.jpg" alt="">
-        <div class="layer">
-          <h3>Social media web</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia doloribus quod harum. Eaque minima vero dolor architecto facere quasi maxime est, quos nobis ullam cupiditate sunt ex, dolores dolorum molestias!</p>
-          <a href="#"><i class='bx bx-link-external'></i></a>
+    <div class="container">
+      <h1 class="subTitle">Portfolio</h1>
+      <div class="workList">
+        <div class="work">
+          <img src="./images/webDevelopment.jpg" alt="">
+          <div class="layer">
+            <h3>Social media web</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia doloribus quod harum. Eaque minima vero dolor architecto facere quasi maxime est, quos nobis ullam cupiditate sunt ex, dolores dolorum molestias!</p>
+            <a href="#"><i class='bx bx-link-external'></i></a>
+          </div>
         </div>
-      </div>
-      <div class="work">
-        <img src="./images/leadership.jpg" alt="">
-        <div class="layer">
-          <h3>Logical Problem Solving</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia doloribus quod harum. Eaque minima vero dolor architecto facere quasi maxime est, quos nobis ullam cupiditate sunt ex, dolores dolorum molestias!</p>
-          <a href="#"><i class='bx bx-link-external'></i></a>
+        <div class="work">
+          <img src="./images/leadership.jpg" alt="">
+          <div class="layer">
+            <h3>Logical Problem Solving</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia doloribus quod harum. Eaque minima vero dolor architecto facere quasi maxime est, quos nobis ullam cupiditate sunt ex, dolores dolorum molestias!</p>
+            <a href="#"><i class='bx bx-link-external'></i></a>
+          </div>
         </div>
-      </div>
-      <div class="work">
-        <img src="./images/problemSolving.jpg" alt="">
-        <div class="layer">
-          <h3>Guiding Team</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia doloribus quod harum. Eaque minima vero dolor architecto facere quasi maxime est, quos nobis ullam cupiditate sunt ex, dolores dolorum molestias!</p>
-          <a href="#"><i class='bx bx-link-external'></i></a>
+        <div class="work">
+          <img src="./images/problemSolving.jpg" alt="">
+          <div class="layer">
+            <h3>Guiding Team</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia doloribus quod harum. Eaque minima vero dolor architecto facere quasi maxime est, quos nobis ullam cupiditate sunt ex, dolores dolorum molestias!</p>
+            <a href="#"><i class='bx bx-link-external'></i></a>
+          </div>
         </div>
       </div>
     </div>
+
     <a class="btn" href="#">See more</a>
   </div>
 
@@ -149,7 +154,7 @@
         <div class="leftContact">
           <h1 class="subTitle">Contact me</h1>
           <p class="email"><i class='bx bxs-envelope'></i>rahul.vishwa638@gmail.com</p>
-          <p class="number"><i class='bx bxs-phone-call'></i>6386948070</p>
+          <p class="number"><i class='bx bxs-phone-call'></i>+916386948070</p>
           <div class="socialIcons">
             <a href=""><img style="width: 1.5rem;" src="./images/icons8-linkedin-48.png" alt=""></a>
             <a href=""><img style="width: 1.5rem;" src="./images/icons8-github-logo-94.png" alt=""></a>
@@ -158,12 +163,13 @@
           <a class="btn btn2" href="./images/Rahul_Vishwakarma_Resume.pdf" download=""><i class='bx bxs-download'></i>Download Resume</a>
         </div>
         <div class="rightContact">
-          <form action="">
-            <input type="text" placeholder="Enter your name" required name="name">
-            <input type="email" placeholder="Enter your email" required name="emain">
-            <textarea name="messafe" name="message" placeholder="Enter your message"></textarea>
+          <form name="submit-to-google-sheet">
+            <input type="text" placeholder="Enter your name" required name="Name">
+            <input type="email" placeholder="Enter your email" required name="Email">
+            <textarea name="Message" placeholder="Enter your message"></textarea>
             <button class="btn btn2" type="submit">Submit</button>
           </form>
+          <span id="msg"></span>
         </div>
       </div>
     </div>

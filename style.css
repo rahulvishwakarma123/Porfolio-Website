@@ -6,23 +6,42 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+    z-index: 10;
+}
 body{
     background-color: #080808;
     color: white;
 }
 /* ====================================Home page Styling========================================= */
-.background{
+#header{
     width: 100%;
     height: 100vh;
-    background-color: black;
+    background: url(./images/background_landscape.png);
     background-size: cover;
     background-position: center;
+    z-index: 1;
 }
+.navPadding{
+    padding: 125px 10px;
+}
+/* --------------------------navbar--------------- */
 nav{
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    width: 100%;
     display: flex;
     justify-content: space-between;   
     align-items: center;
+    flex-wrap: wrap;
     padding: 1em 5em;
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+}
+nav .menu{
+    display: none;
 }
 .logo{
     display: inline-block;
@@ -37,24 +56,27 @@ nav img{
     height: 80px;
     border-radius: 50%;
 }
-nav ul{
+/* nav ul{
     display: flex;
     gap: 3vw;
-}
+} */
 nav ul li{
+    display: inline-block;
     list-style: none;
+    margin: 10px 20px;
 }
 nav ul li a{
     text-decoration: none;
     color: white;
     position: relative;
+    font-size: 30px;
 }
 nav ul li a::after{
     content: '';
     position: absolute;
     bottom: -6px;
     left: 0px;
-    width: 0%;
+    width: 0;
     height: 3px;
     background: orange;
     transition: .5s;
@@ -62,15 +84,19 @@ nav ul li a::after{
 nav ul li a:hover::after{
     width: 100%;
 }
-.containerText{
+/* ---------------------header------------------ */
+.headerText{
     display: inline-block;
-    margin-top: 10%;
+    margin-top: 20%;
     margin-left: 5%;
+    font-size: 30px;
 }
-.containerText .title{
-    font-size: 2.5rem;
+.headerText .title{
+    font-size: 50px;
+    font-weight: 400;
+    margin-top: 20px;
 }
-.containerText .greeting{
+.headerText .greeting{
     font-size: 4rem;
     font-weight: 700;
 }
@@ -81,13 +107,15 @@ nav ul li a:hover::after{
 /* ========================== About styling ====================================== */
 
 #aboutPage{
-    padding: 5rem 0;
+    padding: 80px 0;
     width: 100%;
+    color: #ababab;
     border-top: 1px solid rgba(255, 255, 255, 0.215);
 }
 .row{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .aboutCol-1{
     flex-basis: 35%;
@@ -100,23 +128,26 @@ nav ul li a:hover::after{
     flex-basis: 60%;
 }
 .aboutCol-2 .subTitle{
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 60px;
+    font-weight: 600;
     color: white;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
+}
+.aboutCol-2 .aboutPara{
+    font-size: 25px;
 }
 
 .tabTitles{
     display: flex;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin: 20px 0 40px;
     gap:3rem;
 }
 .tabTitles .tabLinks{
+    margin-right: 50px;
     cursor: pointer;
     position: relative;
-    font-weight: 600;
-    font-size: 1.2rem;
+    font-weight: 500;
+    font-size: 30px;
 }
 .tabTitles .tabLinks::after{
     content: '';
@@ -129,11 +160,15 @@ nav ul li a:hover::after{
     bottom: -8px;
 }
 .tabLinks.activeLink::after{
-    content: '';
     width: 50%;
 }
+.tabContents ul li{
+    font-size: 20px;
+    list-style: none;
+    margin: 10px 0;
+}
 .tabContents ul li span{
-    font-size: .80rem;
+    font-size: 1rem;
     color: orange;
 }
 .tabContents{
@@ -146,8 +181,7 @@ nav ul li a:hover::after{
 /* ===================== Servises page styling ============================== */
 
 #servises{
-    padding: 30px 1rem;
-    width: 100%;
+    padding: 30px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.215);
 }
 .servisesList{
@@ -174,7 +208,7 @@ nav ul li a:hover::after{
     font-weight: 500;
 }
 .servisesList div a{
-    font-size: 15px;
+    font-size: 12px;
     margin-top: 20px;
     text-decoration: none;
     color: white;
@@ -187,7 +221,7 @@ nav ul li a:hover::after{
 
 /* =========================== Portfolio styling ================================ */
 #portfolio{
-    padding: 30px 1rem;
+    padding: 30px 0;
     width: 100%;
     border-top: 1px solid rgba(255, 255, 255, 0.215);
 }
@@ -204,7 +238,7 @@ nav ul li a:hover::after{
 }
 .work img{
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     display: block;
     border-radius: 10px;
     transition: transform .5s;
@@ -236,11 +270,11 @@ nav ul li a:hover::after{
 .layer a{
     margin-top: 20px;
     text-decoration: none;
-    font-size: 1.5rem;
-    line-height: 4rem;
+    font-size: 18px;
+    line-height: 60px;
     background-color: white;
-    width: 4rem;
-    height: 4rem;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     text-align: center;
     color: orange;      
@@ -254,7 +288,7 @@ nav ul li a:hover::after{
 .btn{
     display: block;
     margin: 50px auto;
-    padding: .9rem 3rem;
+    padding: 14px 50px;
     width: fit-content;
     border: 1px solid orange;
     border-radius: 6px;
@@ -267,32 +301,31 @@ nav ul li a:hover::after{
 }
 
 /* ==================================== Contact page styling ========================================== */
-#contact{
+/* #contact{
     height: 80vh;
     width: 100%;
     padding: 3rem 0;
-}
+} */
 .leftContact{
     flex-basis: 35%;
 }
 .leftContact p{
-    margin-top: 2rem;
+    margin-top: 30px;
 }
 .leftContact p i{
     color: orange;
-    margin-right: 1rem;
-    font-size: 1.5rem;
+    margin-right: 15px;
+    font-size: 25px;
 }
 .socialIcons{
+    margin-top: 30px;
     display: flex;
     align-items: center;
     gap: .5rem;
 }
 .socialIcons a{
     text-decoration: none;
-    font-size: 1.2rem;
-    margin-right: 1rem;
-    color: #262626;
+    margin-right: 15px;
     transition: .2s;
 }
 .socialIcons a:hover{
@@ -321,19 +354,20 @@ nav ul li a:hover::after{
     width: 100%;
     border: 0;
     outline: none;
-    padding: 1rem;
-    margin: 1rem 0;
+    padding: 15px;
+    margin: 15px 0;
     background-color: #262626;
     resize: none;
     color: white;
-    font-size: 1.1rem;
-    border-radius: .4rem;
+    font-size: 18px;
+    border-radius: 6px;
 }
 form .btn2{
-    padding: .9rem 4rem;
-    font-size: 1.1rem;
-    margin-top: 1.3rem;
+    padding: 15px 60px;
+    font-size: 1.4rem;
+    margin-top: 20px;
     cursor: pointer;
+    background-color: transparent;
 }
 
 footer{
@@ -352,3 +386,107 @@ footer span{
 
 /* ==================================== Media queries =============================== */
 
+@media(max-width:1000px){
+    nav{
+        padding:15px 20px;
+    }
+    #header{
+        background-position:right;
+    }
+    .headerText{
+        margin-top: 50%;
+        /* margin-left: 0; */
+    }
+    .headerText .title{
+        font-size: 30px;
+    }
+    .headerText .greeting{
+        font-size:50px;
+    }
+    nav .menu{
+        display: block;
+        font-size: 25px;
+        font-weight: 600;
+    }
+    nav ul{
+        background-color: orange;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        transition: .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .menu{
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        cursor: pointer;
+    }
+    
+}
+@media(max-width:600px){
+    nav{
+        padding:15px 20px;
+    }
+    .headerText{
+        margin-top: 70%;
+        /* margin-left: 0; */
+    }
+    .headerText .title{
+        font-size: 25px;
+    }
+    .headerText .greeting{
+        font-size:35px;
+    }
+    nav .menu{
+        display: block;
+        font-size: 25px;
+        font-weight: 600;
+    }
+    nav ul{
+        background-color: orange;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        transition: .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .menu{
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        cursor: pointer;
+    }
+    .aboutCol-1, .aboutCol-2{
+        flex-basis: 70%;
+    }
+    .aboutCol-1{
+        margin-bottom: 30px;
+    }
+    .aboutCol-2{
+        font-size: 14px;
+    }
+    .tabLinks{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+}
+
+
+#msg{
+    color: green;
+    margin-top: -40px;
+    display: block;
+}
